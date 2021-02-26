@@ -1,0 +1,10 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Tickets") do |sheet|
+  # Create the header row
+  sheet.add_row ["Nom du magasin", "Addresse", "Numéro du ticket", "Date", "Heure", "Produits", "Montant par produit", "Montant total"]
+  # Create entries for each item
+  @tickets.each do |item|
+    sheet.add_row [item.name, item.address, item.ticket_number, item.date.strftime("%d/%m/%Y"), item.hour.strftime("%T"), item.products, item.amount_by_product, item.total_amount]
+  end
+end

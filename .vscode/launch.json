@@ -1,0 +1,57 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start Rails server",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/rails",
+            "args": [
+                "server",
+                "-p",
+                "3000"
+            ]
+        },
+        {
+            "name": "Debug Rails server",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "useBundler": true,
+            "pathToBundler": "/home/bolek/.rbenv/shims/bundle",
+            "pathToRDebugIDE": "/home/bolek/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/ruby-debug-ide-0.7.2",
+            "program": "${workspaceRoot}/bin/rails",
+            "args": [
+                "server",
+                "-p",
+                "3000"
+            ]
+        },
+        {
+            "name": "Run RSpec - all",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "/path/to/rubygem/bin/rspec",
+            "args": [
+                "--pattern",
+                "${workspaceRoot}/spec/**/*_rspec.rb"
+            ]
+        },
+        {
+            "name": "Debug RSpec - open spec file",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "useBundler": true,
+            "pathToBundler": "/home/bolek/.rbenv/shims/bundle",
+            "pathToRDebugIDE": "home/bolek/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/ruby-debug-ide-0.7.2",
+            "debuggerPort": "1235",
+            "program": "/path/to/rubygem/bin/rspec",
+            "args": [
+                "${file}"
+            ]
+        }
+    ]
+}

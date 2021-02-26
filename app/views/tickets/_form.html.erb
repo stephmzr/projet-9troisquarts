@@ -1,0 +1,63 @@
+<%= form_with(model: @ticket, local: true) do |form| %>  <% if ticket.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+    <ul>
+      <% ticket.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-row">
+      <div class="form-group col">
+          <%= form.label :name, "Nom du magasin" %>
+          <%= form.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group col">
+          <%= form.label :address, "Adresse du magasin" %>
+          <%= form.text_field :address, class: 'form-control' %>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col">
+          <%= form.label :ticket_number, "Numéro du ticket de caisse" %>
+          <%= form.text_field :ticket_number, class: 'form-control' %>
+      </div>
+      <div class="form-group col">
+          <%= form.label :date, "Date de l'achat" %>
+          <%= form.date_field :date, class: 'form-control' %>
+      </div>
+      <div class="form-group col">
+          <%= form.label :hour, "Heure de l'achat" %>
+          <%= form.time_field :hour, class: 'form-control' %>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col">
+          <%= form.label :products, "Produits" %>
+          <%= form.text_area :products, class: 'form-control' %>
+      </div>
+      <div class="form-group col">
+          <%= form.label :amount_by_product, "Montant par produit" %>
+          <%= form.text_area :amount_by_product, class: 'form-control' %>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-3">
+          <%= form.label :total_amount, "Total du ticket de caisse" %>
+          <%= form.text_field :total_amount, class: 'form-control' %>
+      </div>
+  </div>
+  <br/>
+  <div class="form-row">
+      <div class="form-group col">
+          <%= form.submit "Envoyer", class: 'btn btn-primary' %>
+      </div>
+  </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
