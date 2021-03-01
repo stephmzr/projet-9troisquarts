@@ -26,10 +26,14 @@
           <%= ticket.ticket_number%>
         </td>
         <td>
+        <% if ticket.date.present? %>
           <%= ticket.date.strftime("%d/%m/%Y") %>
+        <% end %>
         </td>
         <td>
+        <% if ticket.hour.present? %>
           <%= ticket.hour.strftime("%T") %>
+        <% end %>
         </td>
         <td>
           <%= ticket.products%>
