@@ -30,6 +30,8 @@ class TicketsController < ApplicationController
   # POST /tickets or /tickets.json
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.date = params[:date] || DateTime.now
+    @ticket.hour = params[:hour] || DateTime.now
 
     respond_to do |format|
       if @ticket.save
